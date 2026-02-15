@@ -105,6 +105,3 @@ Instead of raw numbers, users understand climate impact through visual environme
 * Seasonal climate simulation
 * Map-based selection
 * Climate risk scoring
-
-
-Just ask 👍
