@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  margin: 0;
+}
+
+.dashboard {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  opacity: 0.8;
+}
+
+.input-card, .result-card, .graph-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: #ff9800;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.weather-visual {
+  font-size: 80px;
+  margin: 15px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Weather Scene Container */
+#weatherScene {
+  position: relative;
+  height: 140px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+/* Weather Icon */
+.weather-visual {
+  font-size: 80px;
+  position: relative;
+  z-index: 3;
+}
+
+/* CLOUDS */
+.clouds::before {
+  content: "☁️ ☁️ ☁️";
+  font-size: 40px;
+  position: absolute;
+  top: 10px;
+  left: -120px;
+  animation: moveClouds 12s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes moveClouds {
+  from { transform: translateX(-150px); }
+  to { transform: translateX(1200px); }
+}
+
+/* RAIN */
+.rain::before {
+  content: "💧 💧 💧 💧 💧 💧";
+  font-size: 24px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  animation: rainFall 1s linear infinite;
+}
+
+@keyframes rainFall {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(60px); opacity: 1; }
+}
+
+/* Hide utility */
+.hidden {
+  display: none;
+}
+
+/* ❄️ SNOW ANIMATION */
+.snow::before {
+  content: "❄️ ❄️ ❄️ ❄️ ❄️ ❄️";
+  font-size: 22px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  animation: snowFall 3s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(90px);
+    opacity: 0.8;
+  }
+}

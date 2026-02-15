@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Climate Change Prediction</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <h1>🌍 Climate Change Prediction System</h1>
+  <p class="subtitle">Predict future climate trends</p>
+
+  <div class="input-card">
+    <input type="text" id="place" placeholder="Enter Place (e.g. Delhi)">
+    <input type="date" id="date">
+    <button onclick="predictClimate()">Predict Climate</button>
+  </div>
+
+  <div id="result" class="result-card hidden">
+    <h2 id="locationTitle"></h2>
+
+    <div id="weatherScene">
+  <div id="cloudLayer" class="clouds hidden"></div>
+  <div id="rainLayer" class="rain hidden"></div>
+  <div id="snowLayer" class="snow hidden"></div> 
+  <div id="weatherIcon" class="weather-visual"></div>
+</div>
+
+
+    <div class="stats">
+      <div>
+        <h3>Predicted Temp</h3>
+        <p id="predTemp"></p>
+      </div>
+      <div>
+        <h3>Climate Change</h3>
+        <p id="climateChangeTemp"></p>
+      </div>
+      <div>
+        <h3>Weekly High</h3>
+        <p id="highTemp"></p>
+      </div>
+      <div>
+        <h3>Weekly Low</h3>
+        <p id="lowTemp"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="graph-card hidden">
+    <canvas id="climateChart"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
